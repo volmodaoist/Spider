@@ -27,6 +27,9 @@ parser.add_argument('--user-id', type = str,
 # 爬虫抓取的作业id，适用于豆瓣的作品评分
 parser.add_argument('--entry-id', type = str,
     help = "Enter the entry id you want to scrape")
+# 爬虫抓取的作者id，适用于知乎
+parser.add_argument('--author-id', type = str,
+    help = "Enter the author id you want to scrape")
 # 爬虫抓取的起始页面
 parser.add_argument('--st', type = int, default = 1,
     help = "Crawler start page")  
