@@ -19,7 +19,7 @@ parser = argparse.ArgumentParser(description = 'parsing the command-line argumen
 
 # 爬虫抓取的用户平台
 parser.add_argument('-t', '--type', 
-    choices = ['weibo', 'douban', 'zhihu', 'bilibili', 'news'], 
+    choices = ['weibo', 'douban', 'jnu', 'zhihu', 'bilibili', 'news'], 
     help = 'Choose a type of social media platform')
 # 爬虫抓取的用户id，适用于微博
 parser.add_argument('--user-id', type = str,
@@ -42,6 +42,8 @@ parser.add_argument('--st_year', type = int, default = 2018,
 # 爬虫抓取的结束年份
 parser.add_argument('--ed_year', type = int, default = 2022,
     help = "Crawler end year")
+parser.add_argument("--dead-loop", type = bool, default = False,
+    help = "Real-time updates through endless loop control")
 
 args = vars(parser.parse_args())
 

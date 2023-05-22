@@ -6,11 +6,11 @@ from bs4 import BeautifulSoup
 
 
 """
-    测试样例: 
-        entry_id = 35209733, 35209731, 
-    测试命令:
-        python douban.py --entry-id 35209733 --st 1 --ed 20
-        python douban.py --entry-id 35209731 --st 1 --ed 20
+测试样例: 
+    entry_id = 35209733, 35209731, 
+测试命令:
+    python douban.py --entry-id 35209733 --st 1 --ed 20
+    python douban.py --entry-id 35209731 --st 1 --ed 20
 """
 entry_id = args["entry_id"]
 headers = {
