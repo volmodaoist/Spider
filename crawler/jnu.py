@@ -8,7 +8,6 @@ from bs4 import BeautifulSoup
 # 解析链接
 from urllib.parse import urljoin
 from urllib.parse import urlparse
-from texttable import Texttable
 from email.mime.text import MIMEText
 
 

@@ -14,4 +14,6 @@ python main.py --type douban --entry-id 35209731 --st 1 --ed 20
 python main.py --type douban --entry-id 35209733 --st 1 --ed 20
 ```
 
-hello
+
+
+爬取之后再对结构化的数据进行可视化

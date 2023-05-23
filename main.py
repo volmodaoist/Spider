@@ -3,6 +3,7 @@ from crawler.jnu import for_JNU
 from crawler.weibo import for_weibo
 from crawler.douban import for_douban
 
+from utils.simulate import simulate_WebBrowser
 
 """
 测试豆瓣爬取电影评论的模块
@@ -13,6 +14,7 @@ from crawler.douban import for_douban
     python main.py --type jnu         
 """
 if __name__ == '__main__':
+    print(simulate_WebBrowser("http://www.qstheory.cn/qswp.htm"))
     if args["type"] == "weibo":
         for_weibo()
     elif args["type"] == "douban":
