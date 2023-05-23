@@ -11,7 +11,7 @@ from utils.simulate import simulate_WebBrowser
     python main.py --type douban --entry-id 35209733 --st 1 --ed 20
 
 测试 JNU 通知通告爬取模块
-    python main.py --type jnu         
+    python main.py --type jnu
 """
 if __name__ == '__main__':
     print(simulate_WebBrowser("http://www.qstheory.cn/qswp.htm"))
