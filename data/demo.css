@@ -8,7 +8,7 @@ table, th, td {
     border: 1px solid black;
     padding: 5px;
     word-break: break-word;
-    text-align: center; /* ĞÂÔöµÄ¾ÓÖĞ¶ÔÆëÑùÊ½ */
+    text-align: center; /* æ–°å¢çš„å±…ä¸­å¯¹é½æ ·å¼ */
 }
 
 .center {
