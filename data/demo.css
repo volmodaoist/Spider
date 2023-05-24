@@ -1,0 +1,30 @@
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+    word-break: break-word;
+    text-align: center; /* 新增的居中对齐样式 */
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    margin: 0 5px;
+}

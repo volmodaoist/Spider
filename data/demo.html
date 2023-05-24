@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSV Visualization</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+    <div class="center">
+        <input type="file" id="csvFile" accept=".csv">
+    </div>
+    <div id="tableContainer"></div>
+    <div class="pagination">
+        <button id="prevButton">向前翻页</button>
+        <button id="nextButton">向后翻页</button>
+    </div>
+
+    <script>
+        var currentPage = 1;
+        var pageSize = 20;
+        var data = [];
+        var tableContainer = document.getElementById("tableContainer");
+
+        function renderTable() {
+            tableContainer.innerHTML = "";
+            var startIndex = (currentPage - 1) * pageSize;
+            var endIndex = startIndex + pageSize;
+            var paginatedData = data.slice(startIndex, endIndex);
+
+            var table = document.createElement("table");
+
+            // Create table header
+            var thead = document.createElement("thead");
+            var headerRow = document.createElement("tr");
+            Object.keys(data[0]).forEach(function (key) {
+                var th = document.createElement("th");
+                th.textContent = key;
+                headerRow.appendChild(th);
+            });
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
+
+            // Create table body
+            var tbody = document.createElement("tbody");
+            paginatedData.forEach(function (row) {
+                var tableRow = document.createElement("tr");
+                Object.values(row).forEach(function (value) {
+                    var td = document.createElement("td");
+                    td.textContent = value;
+                    tableRow.appendChild(td);
+                });
+                tbody.appendChild(tableRow);
+            });
+            table.appendChild(tbody);
+
+            tableContainer.appendChild(table);
+        }
+
+        function paginateData() {
+            currentPage = 1;
+            renderTable();
+            renderPagination();
+        }
+
+        function renderPagination() {
+            var pagination = document.querySelector(".pagination");
+            var prevButton = document.getElementById("prevButton");
+            var nextButton = document.getElementById("nextButton");
+            prevButton.disabled = currentPage === 1;
+            nextButton.disabled = currentPage >= Math.ceil(data.length / pageSize);
+        }
+
+        document.getElementById("csvFile").addEventListener("change", function (event) {
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var contents = e.target.result;
+                var rows = contents.split("\n");
+                data = [];
+
+                // Parse CSV data
+                var headers = rows[0].split(",");
+                for (var i = 1; i < rows.length; i++) {
+                    var values = rows[i].split(",");
+                    if (values.length === headers.length) {
+                        var row = {};
+                        for (var j = 0; j < headers.length; j++) {
+                            row[headers[j]] = values[j];
+                        }
+                        data.push(row);
+                    }
+                }
+
+                paginateData();
+            };
+            reader.readAsText(file);
+        });
+
+        document.getElementById("prevButton").addEventListener("click", function () {
+            if (currentPage > 1) {
+                currentPage--;
+                renderTable();
+                renderPagination();
+            }
+        });
+
+        document.getElementById("nextButton").addEventListener("click", function () {
+            var maxPage = Math.ceil(data.length / pageSize);
+            if (currentPage < maxPage) {
+                currentPage++;
+                renderTable();
+                renderPagination();
+            }
+        });
+    </script>
+</body>
+</html>
