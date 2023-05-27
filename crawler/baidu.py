@@ -243,6 +243,7 @@ class BaiduAcademicCrawler:
                     journal_name = f'None Citescore:{cite_score[0]} 审稿周期: 无记录 {journal_name}'
                 else:
                     journal_name = f'None Not-Citescore 审稿周期: 无记录 {journal_name}'
+                    
                 print(f" Title: {paper_name}\n Link: {paper_link}\n Journal Name: {journal_name}")
                 all_dic['English Journal'].setdefault(journal_name, []).append({paper_name: paper_link})
                 english_count += 1
@@ -254,7 +255,7 @@ class BaiduAcademicCrawler:
         print('Finish!')
         return 0
     
-
+# 爬取获得的数据是一个 txt 文件，需要用户手动转为 json 文件，可视化工作有待完成
 def for_baidu(keywords):
     keywords = split_searching_keyword(keywords)
     state_code = BaiduAcademicCrawler().run(keywords)
