@@ -1,0 +1,55 @@
+{
+    "all_paper_num": {
+        "all_count": 7,
+        "Conference count": 0,
+        "English Journal count": 6,
+        "Chinese Journal count": 1
+    },
+    "English Journal": {
+        "SCI-1 Citescore: 15.10 审稿周期: 约6.7个月 Mechanical Systems and Signal Processing": [
+            "共 1 篇",
+            {
+                "Deep learning and its applications to machine health monitoring": "https://xueshu.baidu.com/usercenter/paper/show?paperid=4a3b335773263e6e475e7bbae779a4d6&site=xueshu_se"
+            }
+        ],
+        "None Not-Citescore 审稿周期: 无记录 IEEE/ASME Transactions on Mechatronics": [
+            "共 1 篇",
+            {
+                "Deep Learning for Infrared Thermal Image Based Machine Health Monitoring": "https://xueshu.baidu.com/usercenter/paper/show?paperid=ef2bbe3bc0264290800f26e43e2f0696&site=xueshu_se"
+            }
+        ],
+        "SCI-1 Citescore: 10.20 审稿周期: 约12.0个月 Reliability Engineering and System Safety": [
+            "共 1 篇",
+            {
+                "Automatic multi-differential deep learning and its application to machine remaining useful life prediction": "https://xueshu.baidu.com/usercenter/paper/show?paperid=1m3k0g00fv0t0j20bd1j06p0up313306&site=xueshu_se"
+            }
+        ],
+        "SCI-4 Citescore: 5.00 审稿周期: 约2.0个月 Energies": [
+            "共 1 篇",
+            {
+                "Deep Learning Aided Data-Driven Fault Diagnosis of Rotatory Machine: A Comprehensive Review": "https://xueshu.baidu.com/usercenter/paper/show?paperid=1g700rs03t3b0ge02j680v40ck140250&site=xueshu_se"
+            }
+        ],
+        "None Citescore:0.16 审稿周期: 无记录 Laser Focus World": [
+            "共 1 篇",
+            {
+                "Deep learning brings a new dimension to machine vision": "https://xueshu.baidu.com/usercenter/paper/show?paperid=1b4y0g00e04t0mh0gf3t0jq01u355285&site=xueshu_se"
+            }
+        ],
+        "SCI-3 Citescore: 5.80 审稿周期: 平均6月 Acta Ophthalmologica": [
+            "共 1 篇",
+            {
+                "Definitions: Machine learning, deep leerning and AI understanding": "https://xueshu.baidu.com/usercenter/paper/show?paperid=1g050a4088580mb0hm4t0jn0kd756452&site=xueshu_se"
+            }
+        ]
+    },
+    "Chinese Journal": {
+        "计算机,材料和连续体(英文)": [
+            "共 1 篇",
+            {
+                "Integrating Deep Learning and Machine Translation for Understanding Unrefined Languages": "https://xueshu.baidu.com/usercenter/paper/show?paperid=1b6004308b0k0jn0eg650vj0s5664363&site=xueshu_se"
+            }
+        ]
+    },
+    "Conference": {}
+}

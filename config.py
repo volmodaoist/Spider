@@ -7,10 +7,9 @@
 
 import requests
 import pandas as pd
-import pytz
-import random
-import datetime
+import random, datetime
 import os, sys, re, time
+import pytz
 import argparse
 
 
@@ -19,7 +18,7 @@ parser = argparse.ArgumentParser(description = 'parsing the command-line argumen
 
 # 爬虫抓取的用户平台
 parser.add_argument('-t', '--type', 
-    choices = ['weibo', 'douban', 'jnu', 'zhihu', 'bilibili', 'news'], 
+    choices = ['weibo', 'douban', 'jnu', 'zhihu', 'bilibili', 'news', 'baidu'], 
     help = 'Choose a type of social media platform')
 # 爬虫抓取的用户id，适用于微博
 parser.add_argument('--user-id', type = str,
@@ -48,6 +47,13 @@ parser.add_argument('--ed_year', type = int, default = 2022,
 parser.add_argument("--dead-loop", type = bool, default = False,
     help = "Real-time updates through endless loop control")
 
+# 爬虫抓取百度学术科研论文，检索词的位置，0 代表位于标题，1 代表位于文章之内
+parser.add_argument("--index-pos", choices = [0, 1], default = 0,
+    help = "option 0/1 represent in-title/in-artical, respectively.")
+# 爬虫抓取百度学术科研论文，输入抓取的关键词，多个关键词使用逗号分割
+parser.add_argument("--keywords", type = str, 
+    help = "keywords string that splited by commas")
+
 args = vars(parser.parse_args())
 
 
@@ -70,8 +76,12 @@ user_agents = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0)\
     Gecko/20100101 Firefox/88.0",
 
-    "User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)\
+    AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36"
+
 ]
 
 

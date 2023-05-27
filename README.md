@@ -7,6 +7,11 @@
 python main.py --type jnu
 ```
 
+```python
+# 爬取百度学术的模块，keywords可以根据需要换成自己想要的检索词
+python main.py --type baidu --keywords "deep learning, machine learning"
+```
+
 ```shell
 # 微博模块测试
 python main.py --type weibo --user-id 2714280233
@@ -43,4 +48,12 @@ python main.py --type douban --entry-id 35209733 --st 1 --ed 20
 
 
 爬取之后再对结构化的数据进行可视化
+
+
+
+<div style="page-break-after:always;"></div>
+
+
+
+
 
